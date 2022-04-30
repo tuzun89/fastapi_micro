@@ -14,6 +14,7 @@ while True:
         results = redis.xreadgroup(group, key, {key: '>'}, None)
 
         if results != []:
+            print(results)
             for result in results:
                 obj = result[1][0][1]
                 try:
